@@ -3,7 +3,6 @@ function enviarWhatsApp() {
   document.querySelectorAll('.card').forEach((card, index) => {
     // Usando uma classe "selecionado" para identificar as caixas clicadas
     if (card.classList.contains('selecionado')) {
-      // Pegando o título do serviço (h3)
       const servico = card.querySelector('h3').textContent;
       servicosSelecionados.push(servico);
     }
@@ -15,13 +14,12 @@ function enviarWhatsApp() {
   }
 
   const mensagem = `Olá, gostaria dos seguintes serviços: ${servicosSelecionados.join(", ")}`;
-  const telefone = "5567999217120"; // seu número com código do país e DDD
+  const telefone = "5567999217120"; //número com código do país e DDD
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
   window.open(url, "_blank");
 }
 
-// Código para adicionar/remover a classe "selecionado" no clique nas caixas
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('selecionado');
