@@ -1,0 +1,143 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121619;
+  color: #e1e1e1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho simples */
+header {
+  background-color: #1f262a;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #2e3a40;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #f5f7fa;
+  letter-spacing: 0.05em;
+}
+
+header p {
+  color: #a0a8af;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Mensagem de instrução antes dos serviços */
+.mensagem {
+  margin-bottom: 1.5rem;  /* Espaço maior abaixo do texto */
+  font-size: 1.15rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Conteúdo principal */
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Seção dos serviços */
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background-color: #1f262a;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.card h3 {
+  color: #63d471;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: #b0b8be;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Estilo para a caixa selecionada */
+.card.selecionado {
+  box-shadow: 0 0 15px 3px #63d471;
+  border: 2px solid #63d471;
+  transform: translateY(-10px);
+}
+
+/* Botão WhatsApp com verde suave */
+.btn-whatsapp {
+  background-color: #3a8d4a; /* verde escuro suave */
+  color: #e0e0e0; /* texto claro suave */
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 4px 8px rgba(58, 141, 74, 0.4);
+}
+
+.btn-whatsapp:hover {
+  background-color: #2a6231; /* verde mais escuro no hover */
+  transform: scale(1.05);
+}
+
+/* Ícone WhatsApp */
+.btn-whatsapp i {
+  font-size: 1.3rem;
+}
+
+/* Rodapé */
+footer {
+  background-color: #1f262a;
+  color: #666e76;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.9rem;
+  }
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+}
