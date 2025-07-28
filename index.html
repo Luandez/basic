@@ -22,40 +22,47 @@
 
     <main>
         <!-- Seção Sobre Mim -->
-        <section class="sobre-mim fade-in" aria-label="Sobre o contador">
-            <h2>Sobre Mim</h2>
-            <p>
-                Sou Luan, contador com experiência em contabilidade gerencial e digital. 
-                Tenho como objetivo oferecer soluções contábeis modernas, 
-                ajudando empresas e pessoas a manterem sua saúde financeira 
-                com segurança e eficiência. 
-                Busco sempre inovação e excelência em todos os serviços que realizo.
-            </p>
+        <section class="sobre-mim fade-in">
+            <div class="sobre-mim-conteudo">
+                <div class="texto">
+                    <h2>Sobre Mim</h2>
+                    <p>
+                        Sou Luan, contador com experiência em contabilidade gerencial e digital. 
+                        Tenho como objetivo oferecer soluções contábeis modernas, 
+                        ajudando empresas e pessoas a manterem sua saúde financeira 
+                        com segurança e eficiência. 
+                        Busco sempre inovação e excelência em todos os serviços que realizo.
+                    </p>
+                </div>
+                <div class="gif">
+                    <img src="images/videoSobremim.gif" alt="GIF corporativo de contador">
+                </div>
+            </div>
         </section>
 
-        <p class="mensagem">Escolha o serviço desejado:</p>
+        <p class="mensagem">Selecione abaixo os serviços desejados:</p>
 
-        <section class="servicos" aria-label="Serviços contábeis oferecidos">
-            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
+        <section class="servicos">
+            <div class="card fade-in"> 
                 <h3>Abertura de Empresa</h3>
                 <p>Orientação e apoio para abrir seu negócio com segurança jurídica.</p>
             </div>
-            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
+            <div class="card fade-in">
                 <h3>Declaração de Imposto de Renda</h3>
                 <p>Elaboração e entrega correta do seu IR com total segurança.</p>
             </div>
-            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
+            <div class="card fade-in">
                 <h3>Consultoria Contábil</h3>
                 <p>Assessoria especializada para a gestão financeira e contábil.</p>
             </div>
-            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
+            <div class="card fade-in">
                 <h3>Manutenção de MEI</h3>
-                <p>Gerenciamento e manutenção de obrigações fiscais e contábeis do MEI.</p>
+                <p>Gerenciamento completo e regularização do seu MEI.</p>
             </div>
         </section>
 
-        <button class="btn-whatsapp fade-in" type="button" onclick="enviarWhatsApp()" aria-label="Enviar serviços selecionados para WhatsApp">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> Encaminhar para o WhatsApp
+        <button class="btn-whatsapp fade-in" type="button" onclick="enviarWhatsApp()">
+            <i class="fab fa-whatsapp"></i> Encaminhar para o WhatsApp
         </button>
     </main>
 

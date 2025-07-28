@@ -15,7 +15,7 @@ body {
   flex-direction: column;
 }
 
-/* Cabeçalho simples */
+/* Cabeçalho */
 header {
   background-color: #1f262a;
   padding: 2rem 1rem;
@@ -26,31 +26,24 @@ header {
 header h1 {
   font-weight: 600;
   font-size: 2.5rem;
-  color: #a0b29a; /* cor menos vibrante */
+  color: #d7e0e7;
   letter-spacing: 0.05em;
 }
 
 header p {
-  color: #7f8a73; /* cor mais suave */
+  color: #a0a8af;
   margin-top: 0.5rem;
   font-size: 1.1rem;
 }
 
-/* Mensagem de instrução antes dos serviços */
+/* Mensagem de instrução */
 .mensagem {
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  color: #a0b29a;             /* verde acinzentado, suave */
-  font-weight: 600;
+  font-size: 1.2rem;
+  color: #8ca8d7;  /* azul claro suave */
   text-align: center;
-  letter-spacing: 0.05em;
-  font-style: italic;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  border-bottom: 2px solid #4a7a39;  /* linha fina embaixo */
-  padding-bottom: 8px;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem 0 2.5rem 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* Conteúdo principal */
@@ -62,7 +55,62 @@ main {
   text-align: center;
 }
 
-/* Seção dos serviços */
+/* Seção Sobre Mim */
+.sobre-mim {
+  background-color: #1f262a;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  margin: 3rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  max-width: 900px;
+}
+
+.sobre-mim:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.sobre-mim h2 {
+  color: #8ca8d7;  /* azul claro suave */
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.sobre-mim p {
+  color: #b0b8be;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+}
+
+.sobre-mim-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sobre-mim .gif img {
+  max-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+  animation: flutuar 6s ease-in-out infinite;
+}
+
+.sobre-mim .gif img:hover {
+  transform: scale(1.05);
+}
+
+.sobre-mim .texto {
+  max-width: 500px;
+  text-align: left;
+}
+
+/* Serviços */
 .servicos {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
@@ -81,7 +129,7 @@ main {
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 
 .card h3 {
@@ -97,45 +145,13 @@ main {
   line-height: 1.4;
 }
 
-/* Estilo para a caixa selecionada */
 .card.selecionado {
   box-shadow: 0 0 15px 3px #63d471;
   border: 2px solid #63d471;
   transform: translateY(-10px);
 }
 
-/* Seção Sobre Mim com efeito balão */
-.sobre-mim {
-  background-color: #1f262a;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  margin: 3rem auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  text-align: center;
-  max-width: 800px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.sobre-mim:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-}
-
-.sobre-mim h2 {
-  color: #63d471;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-.sobre-mim p {
-  color: #b0b8be;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* Botão WhatsApp com verde suave */
+/* Botão WhatsApp */
 .btn-whatsapp {
   background-color: #3a8d4a;
   color: #e0e0e0;
@@ -157,7 +173,6 @@ main {
   transform: scale(1.05);
 }
 
-/* Ícone WhatsApp */
 .btn-whatsapp i {
   font-size: 1.3rem;
 }
@@ -171,6 +186,16 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Animação do gif/video flutuando */
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
   header h1 {
@@ -179,5 +204,12 @@ footer {
   .btn-whatsapp {
     width: 100%;
     justify-content: center;
+  }
+  .sobre-mim-conteudo {
+    flex-direction: column;
+  }
+  .sobre-mim .texto {
+    max-width: 100%;
+    text-align: center;
   }
 }
