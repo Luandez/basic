@@ -26,22 +26,31 @@ header {
 header h1 {
   font-weight: 600;
   font-size: 2.5rem;
-  color: #f5f7fa;
+  color: #a0b29a; /* cor menos vibrante */
   letter-spacing: 0.05em;
 }
 
 header p {
-  color: #a0a8af;
+  color: #7f8a73; /* cor mais suave */
   margin-top: 0.5rem;
   font-size: 1.1rem;
 }
 
 /* Mensagem de instrução antes dos serviços */
 .mensagem {
-  margin-bottom: 1.5rem;  /* Espaço maior abaixo do texto */
-  font-size: 1.15rem;
-  color: #ccc;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  color: #a0b29a;             /* verde acinzentado, suave */
+  font-weight: 600;
   text-align: center;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #4a7a39;  /* linha fina embaixo */
+  padding-bottom: 8px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Conteúdo principal */
@@ -71,7 +80,7 @@ main {
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: scale(1.05);
   box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
@@ -95,10 +104,41 @@ main {
   transform: translateY(-10px);
 }
 
+/* Seção Sobre Mim com efeito balão */
+.sobre-mim {
+  background-color: #1f262a;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  margin: 3rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  text-align: center;
+  max-width: 800px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sobre-mim:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.sobre-mim h2 {
+  color: #63d471;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.sobre-mim p {
+  color: #b0b8be;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+}
+
 /* Botão WhatsApp com verde suave */
 .btn-whatsapp {
-  background-color: #3a8d4a; /* verde escuro suave */
-  color: #e0e0e0; /* texto claro suave */
+  background-color: #3a8d4a;
+  color: #e0e0e0;
   border: none;
   padding: 0.9rem 2.5rem;
   border-radius: 25px;
@@ -113,7 +153,7 @@ main {
 }
 
 .btn-whatsapp:hover {
-  background-color: #2a6231; /* verde mais escuro no hover */
+  background-color: #2a6231;
   transform: scale(1.05);
 }
 

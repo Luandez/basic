@@ -1,11 +1,8 @@
 function enviarWhatsApp() {
   const servicosSelecionados = [];
-  document.querySelectorAll('.card').forEach((card, index) => {
-    // Usando uma classe "selecionado" para identificar as caixas clicadas
-    if (card.classList.contains('selecionado')) {
-      const servico = card.querySelector('h3').textContent;
-      servicosSelecionados.push(servico);
-    }
+  document.querySelectorAll('.card.selecionado').forEach((card) => {
+    const servico = card.querySelector('h3').textContent;
+    servicosSelecionados.push(servico);
   });
 
   if (servicosSelecionados.length === 0) {
@@ -14,14 +11,24 @@ function enviarWhatsApp() {
   }
 
   const mensagem = `Olá, gostaria dos seguintes serviços: ${servicosSelecionados.join(", ")}`;
-  const telefone = "5567999217120"; //número com código do país e DDD
+  const telefone = "5567999217120";
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
   window.open(url, "_blank");
 }
 
+// Seleção de serviços
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('selecionado');
   });
+});
+
+// Animação de entrada em sequência (stagger)
+const fadeElements = document.querySelectorAll('.fade-in');
+
+fadeElements.forEach((el, index) => {
+  setTimeout(() => {
+    el.classList.add('show');
+  }, index * 200); // atraso progressivo
 });

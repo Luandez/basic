@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Site Contábil - Luan</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Link para ícones, por exemplo FontAwesome (para o ícone WhatsApp) -->
+    <!-- Ícones (WhatsApp) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -16,30 +16,46 @@
 </head>
 <body>
     <header>
-        <h1>Serviços Contábeis Luan</h1>
+        <h1>Contabilidade Gerencial e Digital</h1>
         <p>Profissionalismo e confiança para você e sua empresa</p>
     </header>
 
     <main>
+        <!-- Seção Sobre Mim -->
+        <section class="sobre-mim fade-in" aria-label="Sobre o contador">
+            <h2>Sobre Mim</h2>
+            <p>
+                Sou Luan, contador com experiência em contabilidade gerencial e digital. 
+                Tenho como objetivo oferecer soluções contábeis modernas, 
+                ajudando empresas e pessoas a manterem sua saúde financeira 
+                com segurança e eficiência. 
+                Busco sempre inovação e excelência em todos os serviços que realizo.
+            </p>
+        </section>
+
         <p class="mensagem">Escolha o serviço desejado:</p>
 
-        <section class="servicos">
-            <div class="card">
+        <section class="servicos" aria-label="Serviços contábeis oferecidos">
+            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
                 <h3>Abertura de Empresa</h3>
                 <p>Orientação e apoio para abrir seu negócio com segurança jurídica.</p>
             </div>
-            <div class="card">
+            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
                 <h3>Declaração de Imposto de Renda</h3>
                 <p>Elaboração e entrega correta do seu IR com total segurança.</p>
             </div>
-            <div class="card">
+            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
                 <h3>Consultoria Contábil</h3>
                 <p>Assessoria especializada para a gestão financeira e contábil.</p>
             </div>
+            <div class="card fade-in" tabindex="0" role="button" aria-pressed="false">
+                <h3>Manutenção de MEI</h3>
+                <p>Gerenciamento e manutenção de obrigações fiscais e contábeis do MEI.</p>
+            </div>
         </section>
 
-        <button class="btn-whatsapp" type="button" onclick="enviarWhatsApp()">
-            <i class="fab fa-whatsapp"></i> Encaminhar para o WhatsApp
+        <button class="btn-whatsapp fade-in" type="button" onclick="enviarWhatsApp()" aria-label="Enviar serviços selecionados para WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Encaminhar para o WhatsApp
         </button>
     </main>
 
