@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* Everton é um mal carater sem vergonha */
+
 /* Corpo da página */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,25 +13,30 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 100px; /* espaço para header fixo */
+  padding-top: 100px; /* espaço para header fixo no desktop */
 }
 
 /* Cabeçalho fixo */
 header {
   background-color: #1f262a;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #2e3a40;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    padding 0.3s ease;
 }
 
+/* Estado "reduzido" ao rolar */
 header.scrolled {
   background-color: #181d20;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  padding: 0.4rem 2rem;
 }
 
 .header-conteudo {
@@ -42,6 +47,12 @@ header.scrolled {
   align-items: center;
   justify-content: center;
   min-height: 100px;
+  transition: min-height 0.3s ease;
+}
+
+/* Quando o header reduzido, diminuir a altura mínima */
+header.scrolled .header-conteudo {
+  min-height: 60px;
 }
 
 /* Logo na lateral esquerda */
@@ -53,8 +64,15 @@ header.scrolled {
   height: 120px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: height 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
+
+/* Logo reduzida quando o header está scrolled */
+header.scrolled .logo {
+  height: 60px;
+}
+
+/* Efeito hover da logo (desktop) */
 .logo:hover {
   transform: translateY(-50%) scale(1.05);
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
@@ -71,12 +89,12 @@ header h1 {
   color: #d7e0e7;
   letter-spacing: 0.05em;
   margin-bottom: 0.3rem;
+  transition: font-size 0.3s ease;
 }
 
-header p {
-  color: #a0a8af;
-  font-size: 1rem;
-  margin-top: 0;
+/* Reduzir fonte do título no scroll */
+header.scrolled h1 {
+  font-size: 1.6rem;
 }
 
 /* Mensagem de instrução */
@@ -242,12 +260,19 @@ footer {
 /* Ajustes para celular */
 @media (max-width: 600px) {
   header {
-    padding: 0.5rem 1rem; /* cabeçalho mais compacto */
+    position: static; /* Remove fixo no mobile */
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #2e3a40;
+    box-shadow: none;
+  }
+
+  body {
+    padding-top: 0; /* Remove padding no topo */
   }
 
   .logo {
-    height: 70px; /* logo menor */
-    position: static; /* evita sobreposição exagerada */
+    height: 70px;
+    position: static;
     transform: none;
     margin-bottom: 0.5rem;
   }
@@ -264,15 +289,11 @@ footer {
   }
 
   header h1 {
-    font-size: 1.5rem; /* título menor no celular */
+    font-size: 1.5rem;
   }
 
   header p {
     font-size: 0.9rem;
-  }
-
-  body {
-    padding-top: 85px; /* menos espaço reservado no topo */
   }
 
   .btn-whatsapp {
