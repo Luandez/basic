@@ -32,3 +32,13 @@ fadeElements.forEach((el, index) => {
     el.classList.add('show');
   }, index * 200); // atraso progressivo
 });
+
+// --- NOVO: Alterar cabeçalho ao rolar ---
+window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
+  if (window.scrollY > 10) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});

@@ -13,33 +13,76 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 100px; /* espaço para header fixo */
 }
 
-/* Cabeçalho */
+/* Cabeçalho fixo */
 header {
   background-color: #1f262a;
-  padding: 2rem 1rem;
+  padding: 0.8rem 2rem;
   border-bottom: 1px solid #2e3a40;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+  background-color: #181d20;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.header-conteudo {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+/* Logo na lateral esquerda */
+.logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo:hover {
+  transform: translateY(-50%) scale(1.05);
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+
+/* Texto centralizado */
+.titulo-subtitulo {
   text-align: center;
 }
 
 header h1 {
-  font-weight: 600;
-  font-size: 2.5rem;
+  font-weight: 700;
+  font-size: 2.1rem;
   color: #d7e0e7;
   letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
 }
 
 header p {
   color: #a0a8af;
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  margin-top: 0;
 }
 
 /* Mensagem de instrução */
 .mensagem {
   font-size: 1.2rem;
-  color: #8ca8d7;  /* azul claro suave */
+  color: #8ca8d7;
   text-align: center;
   margin: 2rem 0 2.5rem 0;
   font-weight: 600;
@@ -72,7 +115,7 @@ main {
 }
 
 .sobre-mim h2 {
-  color: #8ca8d7;  /* azul claro suave */
+  color: #8ca8d7;
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
@@ -198,6 +241,22 @@ footer {
 
 /* Responsividade */
 @media (max-width: 600px) {
+  .header-conteudo {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: static;
+    min-height: auto;
+  }
+  .logo {
+    position: static;
+    transform: none;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+  .titulo-subtitulo {
+    text-align: center;
+  }
   header h1 {
     font-size: 1.9rem;
   }
