@@ -239,34 +239,51 @@ footer {
   }
 }
 
-/* Responsividade */
+/* Ajustes para celular */
 @media (max-width: 600px) {
+  header {
+    padding: 0.5rem 1rem; /* cabeçalho mais compacto */
+  }
+
+  .logo {
+    height: 70px; /* logo menor */
+    position: static; /* evita sobreposição exagerada */
+    transform: none;
+    margin-bottom: 0.5rem;
+  }
+
   .header-conteudo {
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: static;
+    align-items: center;
     min-height: auto;
+    gap: 0.5rem;
   }
-  .logo {
-    position: static;
-    transform: none;
-    height: 100px;
-    margin-bottom: 1rem;
-  }
+
   .titulo-subtitulo {
     text-align: center;
   }
+
   header h1 {
-    font-size: 1.9rem;
+    font-size: 1.5rem; /* título menor no celular */
   }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  body {
+    padding-top: 85px; /* menos espaço reservado no topo */
+  }
+
   .btn-whatsapp {
     width: 100%;
     justify-content: center;
   }
+
   .sobre-mim-conteudo {
     flex-direction: column;
   }
+
   .sobre-mim .texto {
     max-width: 100%;
     text-align: center;
