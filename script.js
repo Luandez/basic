@@ -1,3 +1,4 @@
+// meu código estruturado js - tenho coisas a melhorar ainda
 function enviarWhatsApp() {
   const servicosSelecionados = [];
   document.querySelectorAll('.card.selecionado').forEach((card) => {
