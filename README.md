@@ -39,4 +39,4 @@ cd meu-primeiro-site
 
 3. Abra o arquivo (index.html) no navegador de preferencia.
 
-Este projeto foi só para passar um tempo, por isso a simplicidade 😁
+###Este projeto foi desenvolvido com o objetivo de aperfeiçoar as minhas habilidades.###
