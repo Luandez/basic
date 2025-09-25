@@ -1,4 +1,4 @@
-# Meu Primeiro Site
+# 🧩 Site Para Aperfeiçoar habilidades
 
 Projeto iniciante em HTML, CSS e JS criado por **Luandez**.
 
